@@ -30,7 +30,7 @@ public class CreateCourseServiceTest {
     // Criar um novo Service
     CreateCourseService createCourseService = new CreateCourseService(repositoryTest);
 
-    // Criar um novo Curso
+    // Cadastrar um novo Curso
     Course createCourse = createCourseService.execute(course);
 
     assertNotNull(createCourse.getId());
@@ -48,11 +48,11 @@ public class CreateCourseServiceTest {
     CourseRepositoryTest repositoryTest = new CourseRepositoryTest();
     // Criar um novo Service
     CreateCourseService createCourseService = new CreateCourseService(repositoryTest);
-    // Criar o primeiro curso
+    // Cadastrar o primeiro curso
     createCourseService.execute(course);
 
     Error error = assertThrows(Error.class, () -> {
-      // Criar o segundo curso
+      // Cadastrar o segundo curso
       createCourseService.execute(course);
     });
 

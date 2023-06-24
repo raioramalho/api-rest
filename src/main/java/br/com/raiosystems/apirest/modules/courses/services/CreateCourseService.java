@@ -24,7 +24,7 @@ public class CreateCourseService {
       throw new Error("Curso já cadastrado!");
     }
 
-    // se não - retorna novo curso
+    // Se não - retorna novo curso
     return this.repository.save(course);
 
   }
