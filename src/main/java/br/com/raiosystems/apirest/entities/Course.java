@@ -12,7 +12,7 @@ public class Course {
   }
 
   public Course(String description, String name, int workload) {
-    this.id = new UUID(1L, 0);
+    this.id = UUID.randomUUID();
     this.description = description;
     this.name = name;
     this.workload = workload;

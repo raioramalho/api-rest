@@ -1,27 +1,30 @@
 package br.com.raiosystems.apirest.entities;
 
+import java.util.UUID;
+
 public class Product {
-  private Long id;
+  private UUID id;
   private String name;
   private Double price;
-
-  private Department department;
 
   public Product() {
   }
 
-  public Product(Long id, String name, Double price, Department department) {
-    this.id = id;
+
+
+  public Product(UUID id, String name, Double price) {
+    this.id = UUID.randomUUID();
     this.name = name;
     this.price = price;
-    this.department = department;
   }
 
-  public Long getId() {
+
+
+  public UUID getId() {
     return id;
   }
 
-  public void setId(Long id) {
+  public void setId(UUID id) {
     this.id = id;
   }
 
@@ -39,14 +42,6 @@ public class Product {
 
   public void setPrice(Double price) {
     this.price = price;
-  }
-
-  public Department getDepartment() {
-    return department;
-  }
-
-  public void setDepartment(Department department) {
-    this.department = department;
   }
 
 
