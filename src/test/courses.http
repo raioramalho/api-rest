@@ -7,3 +7,8 @@ Content-Type: application/json
   "description": "Curso de java avançado",
   "workload": 100
 }
+
+
+### GET to /
+GET http://localhost:8080/courses
+Content-Type: application/json

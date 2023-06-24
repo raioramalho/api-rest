@@ -18,6 +18,10 @@ public class CourseRepositoryTest {
     this.courses = new ArrayList<Course>();
   }
 
+  public List<Course> getAll() {
+    return courses;
+  }
+
   public Course findByName(String name) {
     Optional<Course> findCourse = this.courses.stream().filter(courses -> courses.getName().equals(name)).findFirst();
     return findCourse.orElse(null);

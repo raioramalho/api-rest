@@ -1,5 +1,6 @@
-package br.com.raiosystems.apirest;
+package br.com.raiosystems.apirest.course;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
@@ -9,15 +10,13 @@ import org.springframework.boot.test.context.SpringBootTest;
 import br.com.raiosystems.apirest.entities.Course;
 import br.com.raiosystems.apirest.modules.courses.services.CreateCourseService;
 import br.com.raiosystems.apirest.repositories.CourseRepositoryTest;
-import net.bytebuddy.implementation.bytecode.Throw;
 
 @SpringBootTest
 public class CreateCourseServiceTest {
 
   @Test
   public void should_be_able_to_create_a_new_course() {
-    // Criar um novo Curso
-    // Criar table Cursos (id, description, name, workload)
+    // Cursos (id, description, name, workload)
 
     // Criar Entidade
     Course course = new Course();
@@ -30,6 +29,8 @@ public class CreateCourseServiceTest {
 
     // Criar um novo Service
     CreateCourseService createCourseService = new CreateCourseService(repositoryTest);
+
+    // Criar um novo Curso
     Course createCourse = createCourseService.execute(course);
 
     assertNotNull(createCourse.getId());
@@ -43,16 +44,19 @@ public class CreateCourseServiceTest {
     course.setName("Curso_name");
     course.setWorkload(100);
 
-    assertThrows(Error.class, () -> {
-      // Criar Repositorio de Curso
-      CourseRepositoryTest repositoryTest = new CourseRepositoryTest();
-      // Criar um novo Service
-      CreateCourseService createCourseService = new CreateCourseService(repositoryTest);
-      // Criar o primeiro
+    // Criar Repositorio de Curso
+    CourseRepositoryTest repositoryTest = new CourseRepositoryTest();
+    // Criar um novo Service
+    CreateCourseService createCourseService = new CreateCourseService(repositoryTest);
+    // Criar o primeiro curso
+    createCourseService.execute(course);
+
+    Error error = assertThrows(Error.class, () -> {
+      // Criar o segundo curso
       createCourseService.execute(course);
-      // Erro
-      createCourseService.execute(course);
-    }, "");
+    });
+
+    assertEquals("Curso já cadastrado!", error.getMessage());
 
   }
 
