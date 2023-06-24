@@ -2,9 +2,12 @@ package br.com.raiosystems.apirest.modules.products.services;
 
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import br.com.raiosystems.apirest.entities.Product;
 import br.com.raiosystems.apirest.repositories.ProductRepositoryTest;
 
+@Service
 public class GetAllProductService {
 
   private ProductRepositoryTest repository;

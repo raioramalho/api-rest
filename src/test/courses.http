@@ -3,9 +3,9 @@ POST http://localhost:8080/courses
 Content-Type: application/json
 
 {
-  "name": "Curso de java",
-  "description": "Curso de java avançado",
-  "workload": 100
+  "name": "Curso de node",
+  "description": "Curso de node avançado",
+  "workload": 120
 }
 
 
