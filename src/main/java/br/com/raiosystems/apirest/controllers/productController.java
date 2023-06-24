@@ -12,7 +12,7 @@ import br.com.raiosystems.apirest.entities.Product;
 
 @RestController
 @RequestMapping("/products")
-public class productController {
+public class ProductController {
 
   @GetMapping
   public List<Product> getObjects() {

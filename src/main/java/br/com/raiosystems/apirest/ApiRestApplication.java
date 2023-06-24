@@ -8,7 +8,7 @@ public class ApiRestApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(ApiRestApplication.class, args);
-		System.out.println("# - Rest is running at [ http://localhost:8080 ]");
+		System.out.println("# - STATUS: Rest is running at [ http://localhost:8080 ]");
 	}
 
 }
