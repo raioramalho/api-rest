@@ -2,7 +2,6 @@ package br.com.raiosystems.apirest;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
-import static org.junit.jupiter.api.Assertions.assertThrowsExactly;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -10,6 +9,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import br.com.raiosystems.apirest.entities.Course;
 import br.com.raiosystems.apirest.modules.courses.services.CreateCourseService;
 import br.com.raiosystems.apirest.repositories.CourseRepositoryTest;
+import net.bytebuddy.implementation.bytecode.Throw;
 
 @SpringBootTest
 public class CreateCourseServiceTest {
@@ -43,17 +43,17 @@ public class CreateCourseServiceTest {
     course.setName("Curso_name");
     course.setWorkload(100);
 
-    // Criar Repositorio de Curso
-    CourseRepositoryTest repositoryTest = new CourseRepositoryTest();
+    assertThrows(Error.class, () -> {
+      // Criar Repositorio de Curso
+      CourseRepositoryTest repositoryTest = new CourseRepositoryTest();
+      // Criar um novo Service
+      CreateCourseService createCourseService = new CreateCourseService(repositoryTest);
+      // Criar o primeiro
+      createCourseService.execute(course);
+      // Erro
+      createCourseService.execute(course);
+    }, "");
 
-    // Criar um novo Service
-    CreateCourseService createCourseService = new CreateCourseService(repositoryTest);
-    // Criar o primeiro
-    createCourseService.execute(course);
-    // Erro
-    assertThrows(Error.class);
-
-   }
-
+  }
 
 }

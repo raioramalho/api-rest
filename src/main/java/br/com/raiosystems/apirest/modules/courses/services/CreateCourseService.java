@@ -21,7 +21,7 @@ public class CreateCourseService {
 
     // Se sim - retorna erro
     if (findCourse != null) {
-      throw new Error("Curso já existe!");
+      throw new Error("Curso já cadastrado!");
     }
 
     // se não - retorna novo curso
