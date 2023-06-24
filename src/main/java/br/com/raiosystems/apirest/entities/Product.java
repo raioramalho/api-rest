@@ -12,7 +12,7 @@ public class Product {
 
 
 
-  public Product(UUID id, String name, Double price) {
+  public Product(String name, Double price) {
     this.id = UUID.randomUUID();
     this.name = name;
     this.price = price;
