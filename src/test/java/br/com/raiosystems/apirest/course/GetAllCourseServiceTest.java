@@ -1,6 +1,7 @@
 package br.com.raiosystems.apirest.course;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import java.util.List;
 
@@ -36,5 +37,22 @@ public class GetAllCourseServiceTest {
 
     assertEquals(2, courses.size());
 
+  }
+
+  @Test
+  public void should_resolve_error_if_list_is_empty() {
+    // Cursos (id, description, name, workload)
+    // Repositorio de Cursos
+    CourseRepositoryTest repositoryTest = new CourseRepositoryTest();
+
+    // Listar cursos
+    GetAllCourseService getAllCourseServiceTest = new GetAllCourseService(repositoryTest);
+
+    Error error = assertThrows(Error.class, () -> {
+      // Criar o segundo curso
+      getAllCourseServiceTest.execute();
+    });
+
+    assertEquals("Nenhum curso encontrado!", error.getMessage());
   }
 }
