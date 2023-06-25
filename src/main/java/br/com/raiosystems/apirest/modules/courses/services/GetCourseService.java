@@ -17,7 +17,13 @@ public class GetCourseService {
   }
 
   public Course execute(UUID id) {
-    return this.repository.findById(id);
+    Course findCourse = this.repository.findById(id);
+
+    if (findCourse == null) {
+      throw new Error("Curso não encontrado!");
+    }
+
+    return findCourse;
   }
 
 }

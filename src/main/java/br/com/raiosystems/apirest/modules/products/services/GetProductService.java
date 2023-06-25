@@ -18,6 +18,11 @@ public class GetProductService {
 
   public Product execute(UUID id) {
     Product product = this.repository.findById(id);
+
+    if (product == null) {
+      throw new Error("Produto não encontrado!");
+    }
+
     return product;
   }
 
