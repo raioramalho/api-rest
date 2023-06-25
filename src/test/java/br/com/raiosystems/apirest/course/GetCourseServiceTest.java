@@ -1,6 +1,7 @@
 package br.com.raiosystems.apirest.course;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
@@ -51,8 +52,7 @@ public class GetCourseServiceTest {
 
     Error error = assertThrows(Error.class, () -> {
       // Buscar curso
-      Course findCourse = getCourseService.execute(wrongId);
-      assertNull(findCourse);
+      getCourseService.execute(wrongId);
 
     });
 

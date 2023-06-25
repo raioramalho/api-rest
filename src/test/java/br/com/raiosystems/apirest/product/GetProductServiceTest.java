@@ -51,8 +51,7 @@ public class GetProductServiceTest {
 
     Error error = assertThrows(Error.class, () -> {
       // Buscar curso
-      Product findCourse = getCourseService.execute(wrongId);
-      assertNull(findCourse);
+      getCourseService.execute(wrongId);
 
     });
 
