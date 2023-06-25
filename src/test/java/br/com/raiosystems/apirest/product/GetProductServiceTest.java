@@ -6,7 +6,6 @@ import org.junit.jupiter.api.Test;
 
 import br.com.raiosystems.apirest.entities.Product;
 import br.com.raiosystems.apirest.modules.products.services.CreateProductService;
-import br.com.raiosystems.apirest.modules.products.services.GetAllProductService;
 import br.com.raiosystems.apirest.modules.products.services.GetProductService;
 import br.com.raiosystems.apirest.repositories.ProductRepositoryTest;
 

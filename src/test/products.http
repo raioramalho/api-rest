@@ -3,11 +3,16 @@ POST http://localhost:8080/products
 Content-Type: application/json
 
 {
-  "name": "Mx Keys Mini",
-  "price": 420.00
+  "name": "Mx Keys",
+  "price": 320.00
 }
 
 
 ### GET to /
 GET http://localhost:8080/products
+Content-Type: application/json
+
+
+### GET to /
+GET http://localhost:8080/products/?id=b41fff09-1ffe-46cf-b61a-1ccbc1eceac0
 Content-Type: application/json
