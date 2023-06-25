@@ -22,7 +22,13 @@ public class ProductRepositoryTest {
   }
 
   public Product findByName(String name) {
-    Optional<Product> findProduct = this.products.stream().filter(products -> products.getName().equals(name)).findFirst();
+    Optional<Product> findProduct = this.products.stream().filter(products -> products.getName().equals(name))
+        .findFirst();
+    return findProduct.orElse(null);
+  }
+
+  public Product findById(UUID id) {
+    Optional<Product> findProduct = this.products.stream().filter(products -> products.getId().equals(id)).findFirst();
     return findProduct.orElse(null);
   }
 
