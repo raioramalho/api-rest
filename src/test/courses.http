@@ -3,12 +3,18 @@ POST http://localhost:8080/courses
 Content-Type: application/json
 
 {
-  "name": "Curso de node",
-  "description": "Curso de node avançado",
+  "name": "Curso de Java",
+  "description": "Curso de Java avançado",
   "workload": 120
 }
 
 
 ### GET to /
 GET http://localhost:8080/courses
+Content-Type: application/json
+
+
+
+### GET to /ID
+GET http://localhost:8080/courses/?id=86141387-98e6-418e-973b-9f19a8c012fd
 Content-Type: application/json

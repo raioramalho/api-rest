@@ -27,6 +27,11 @@ public class CourseRepositoryTest {
     return findCourse.orElse(null);
   }
 
+  public Course findById(UUID id) {
+    Optional<Course> findCourse = this.courses.stream().filter(courses -> courses.getId().equals(id)).findFirst();
+    return findCourse.orElse(null);
+  }
+
   public Course save(Course course) {
     this.courses.add(course);
     course.setId(UUID.randomUUID());
