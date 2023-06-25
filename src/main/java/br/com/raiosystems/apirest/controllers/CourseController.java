@@ -15,12 +15,13 @@ import br.com.raiosystems.apirest.modules.courses.services.CreateCourseService;
 import br.com.raiosystems.apirest.modules.courses.services.GetAllCourseService;
 import br.com.raiosystems.apirest.modules.courses.services.GetCourseService;
 import br.com.raiosystems.apirest.repositories.CourseRepositoryTest;
+import br.com.raiosystems.apirest.repositories.ICourseRepository;
 
 @RestController
 @RequestMapping("/courses")
 public class CourseController {
 
-  CourseRepositoryTest repository = new CourseRepositoryTest();
+  ICourseRepository repository = new CourseRepositoryTest();
   private CreateCourseService createCourseService = new CreateCourseService(repository);
   private GetAllCourseService getAllCourseService = new GetAllCourseService(repository);
   private GetCourseService getCourseService = new GetCourseService(repository);

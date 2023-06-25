@@ -5,14 +5,14 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import br.com.raiosystems.apirest.entities.Course;
-import br.com.raiosystems.apirest.repositories.CourseRepositoryTest;
+import br.com.raiosystems.apirest.repositories.ICourseRepository;
 
 @Service
 public class GetAllCourseService {
 
-  private CourseRepositoryTest repository;
+  private ICourseRepository repository;
 
-  public GetAllCourseService(CourseRepositoryTest repository) {
+  public GetAllCourseService(ICourseRepository repository) {
     this.repository = repository;
   }
 

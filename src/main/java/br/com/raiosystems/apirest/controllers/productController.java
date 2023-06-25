@@ -10,18 +10,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.raiosystems.apirest.entities.Course;
 import br.com.raiosystems.apirest.entities.Product;
 import br.com.raiosystems.apirest.modules.products.services.CreateProductService;
 import br.com.raiosystems.apirest.modules.products.services.GetAllProductService;
 import br.com.raiosystems.apirest.modules.products.services.GetProductService;
+import br.com.raiosystems.apirest.repositories.IProductRepository;
 import br.com.raiosystems.apirest.repositories.ProductRepositoryTest;
 
 @RestController
 @RequestMapping("/products")
 public class ProductController {
 
-  ProductRepositoryTest repository = new ProductRepositoryTest();
+  IProductRepository repository = new ProductRepositoryTest();
   private CreateProductService createProductService = new CreateProductService(repository);
   private GetAllProductService getAllProductService = new GetAllProductService(repository);
   private GetProductService getProductService = new GetProductService(repository);

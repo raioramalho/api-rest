@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 import br.com.raiosystems.apirest.entities.Product;
 
 @Repository
-public class ProductRepositoryTest {
+public class ProductRepositoryTest implements IProductRepository{
   private List<Product> products;
 
   public ProductRepositoryTest() {
