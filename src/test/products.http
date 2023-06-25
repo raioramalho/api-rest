@@ -3,8 +3,8 @@ POST http://localhost:8080/products
 Content-Type: application/json
 
 {
-  "name": "Mx Keys",
-  "price": 320.00
+  "name": "Mx Keys Mini",
+  "price": 420.00
 }
 
 
