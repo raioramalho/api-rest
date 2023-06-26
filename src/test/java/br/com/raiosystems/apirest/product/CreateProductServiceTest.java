@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 
 import br.com.raiosystems.apirest.entities.Product;
 import br.com.raiosystems.apirest.modules.products.services.CreateProductService;
-import br.com.raiosystems.apirest.repositories.ProductRepositoryTest;
+import br.com.raiosystems.apirest.repositories.IRepository;
 import br.com.raiosystems.apirest.repositories.RepositoryTest;
 
 public class CreateProductServiceTest {
@@ -22,7 +22,7 @@ public class CreateProductServiceTest {
     produto.setPrice(200.00);
 
     // Criar Repositorio de Product
-    RepositoryTest<Product> repositoryTest = new RepositoryTest<Product>();
+    IRepository<Product> repositoryTest = new RepositoryTest<Product>();
 
     // Criar um novo Service
     CreateProductService createProductServiceTest = new CreateProductService(repositoryTest);
@@ -41,7 +41,7 @@ public class CreateProductServiceTest {
     produto.setPrice(200.00);
 
     // Criar Repositorio de Product
-    ProductRepositoryTest repositoryTest = new ProductRepositoryTest();
+    IRepository<Product> repositoryTest = new RepositoryTest<Product>();
 
     // Criar um novo Service
     CreateProductService createProductServiceTest = new CreateProductService(repositoryTest);

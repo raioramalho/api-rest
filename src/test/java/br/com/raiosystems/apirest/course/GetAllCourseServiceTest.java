@@ -11,7 +11,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import br.com.raiosystems.apirest.entities.Course;
 import br.com.raiosystems.apirest.modules.courses.services.CreateCourseService;
 import br.com.raiosystems.apirest.modules.courses.services.GetAllCourseService;
-import br.com.raiosystems.apirest.repositories.CourseRepositoryTest;
+import br.com.raiosystems.apirest.repositories.IRepository;
 import br.com.raiosystems.apirest.repositories.RepositoryTest;
 
 @SpringBootTest
@@ -25,7 +25,7 @@ public class GetAllCourseServiceTest {
     Course course2 = new Course("Description", "Curso_dois", 120);
 
     // Repositorio de Cursos
-    RepositoryTest<Course> repositoryTest = new RepositoryTest<Course>();
+    IRepository<Course> repositoryTest = new RepositoryTest<Course>();
 
     // Cadastrar cursos
     CreateCourseService createCourseService = new CreateCourseService(repositoryTest);
@@ -44,7 +44,7 @@ public class GetAllCourseServiceTest {
   public void should_resolve_error_if_list_is_empty() {
     // Cursos (id, description, name, workload)
     // Repositorio de Cursos
-    CourseRepositoryTest repositoryTest = new CourseRepositoryTest();
+    IRepository<Course> repositoryTest = new RepositoryTest<Course>();
 
     // Listar cursos
     GetAllCourseService getAllCourseServiceTest = new GetAllCourseService(repositoryTest);

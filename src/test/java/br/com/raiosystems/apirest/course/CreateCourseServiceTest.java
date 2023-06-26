@@ -9,7 +9,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import br.com.raiosystems.apirest.entities.Course;
 import br.com.raiosystems.apirest.modules.courses.services.CreateCourseService;
-import br.com.raiosystems.apirest.repositories.CourseRepositoryTest;
+import br.com.raiosystems.apirest.repositories.IRepository;
 import br.com.raiosystems.apirest.repositories.RepositoryTest;
 
 @SpringBootTest
@@ -26,8 +26,7 @@ public class CreateCourseServiceTest {
     course.setWorkload(100);
 
     // Criar Repositorio de Curso
-    // CourseRepositoryTest repositoryTest = new CourseRepositoryTest();
-    RepositoryTest<Course> repositoryTest = new RepositoryTest<Course>();
+    IRepository<Course> repositoryTest = new RepositoryTest<Course>();
 
     // Criar um novo Service
     CreateCourseService createCourseService = new CreateCourseService(repositoryTest);
@@ -47,7 +46,8 @@ public class CreateCourseServiceTest {
     course.setWorkload(100);
 
     // Criar Repositorio de Curso
-    CourseRepositoryTest repositoryTest = new CourseRepositoryTest();
+    IRepository<Course> repositoryTest = new RepositoryTest<Course>();
+
     // Criar um novo Service
     CreateCourseService createCourseService = new CreateCourseService(repositoryTest);
     // Cadastrar o primeiro curso

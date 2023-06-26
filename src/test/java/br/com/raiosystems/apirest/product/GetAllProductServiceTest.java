@@ -11,7 +11,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import br.com.raiosystems.apirest.entities.Product;
 import br.com.raiosystems.apirest.modules.products.services.CreateProductService;
 import br.com.raiosystems.apirest.modules.products.services.GetAllProductService;
-import br.com.raiosystems.apirest.repositories.ProductRepositoryTest;
+import br.com.raiosystems.apirest.repositories.IRepository;
 import br.com.raiosystems.apirest.repositories.RepositoryTest;
 
 @SpringBootTest
@@ -25,7 +25,7 @@ public class GetAllProductServiceTest {
     Product product2 = new Product("Mx Keys", 320.00);
 
     // Repositorio de Produtos
-    RepositoryTest<Product> repositoryTest = new RepositoryTest<Product>();
+    IRepository<Product> repositoryTest = new RepositoryTest<Product>();
 
     // Cadastrar produtos
     CreateProductService createProductService = new CreateProductService(repositoryTest);
@@ -44,7 +44,7 @@ public class GetAllProductServiceTest {
   public void should_resolve_error_if_list_is_empty() {
     // Produtos (id, name, price)
     // Repositorio de produtos
-    ProductRepositoryTest repositoryTest = new ProductRepositoryTest();
+    IRepository<Product> repositoryTest = new RepositoryTest<Product>();
 
     // Listar produtos
     GetAllProductService getAllProductService = new GetAllProductService(repositoryTest);

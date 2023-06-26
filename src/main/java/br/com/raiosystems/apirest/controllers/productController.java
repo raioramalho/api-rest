@@ -15,13 +15,13 @@ import br.com.raiosystems.apirest.modules.products.services.CreateProductService
 import br.com.raiosystems.apirest.modules.products.services.GetAllProductService;
 import br.com.raiosystems.apirest.modules.products.services.GetProductService;
 import br.com.raiosystems.apirest.repositories.IRepository;
-import br.com.raiosystems.apirest.repositories.ProductRepositoryTest;
+import br.com.raiosystems.apirest.repositories.RepositoryTest;
 
 @RestController
 @RequestMapping("/products")
 public class ProductController {
 
-  IRepository<Product> repository = new ProductRepositoryTest();
+  IRepository<Product> repository = new RepositoryTest<Product>();
   private CreateProductService createProductService = new CreateProductService(repository);
   private GetAllProductService getAllProductService = new GetAllProductService(repository);
   private GetProductService getProductService = new GetProductService(repository);

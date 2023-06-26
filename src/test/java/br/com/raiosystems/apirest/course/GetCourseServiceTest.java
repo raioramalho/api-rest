@@ -1,8 +1,6 @@
 package br.com.raiosystems.apirest.course;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import java.util.UUID;
@@ -12,7 +10,7 @@ import org.junit.jupiter.api.Test;
 import br.com.raiosystems.apirest.entities.Course;
 import br.com.raiosystems.apirest.modules.courses.services.CreateCourseService;
 import br.com.raiosystems.apirest.modules.courses.services.GetCourseService;
-import br.com.raiosystems.apirest.repositories.CourseRepositoryTest;
+import br.com.raiosystems.apirest.repositories.IRepository;
 import br.com.raiosystems.apirest.repositories.RepositoryTest;
 
 public class GetCourseServiceTest {
@@ -24,7 +22,7 @@ public class GetCourseServiceTest {
     Course course = new Course("Description", "Curso_de_TDD", 70);
 
     // Repositorio de Curso
-    RepositoryTest<Course> repositoryTest = new RepositoryTest<Course>();
+    IRepository<Course> repositoryTest = new RepositoryTest<Course>();
 
     // Cadastrar curso
     CreateCourseService createCourseService = new CreateCourseService(repositoryTest);
@@ -44,7 +42,8 @@ public class GetCourseServiceTest {
     // Cursos (id, description, name, workload)
 
     // Repositorio de Curso
-    CourseRepositoryTest repositoryTest = new CourseRepositoryTest();
+    IRepository<Course> repositoryTest = new RepositoryTest<Course>();
+
     GetCourseService getCourseService = new GetCourseService(repositoryTest);
 
     // Criando id não existente

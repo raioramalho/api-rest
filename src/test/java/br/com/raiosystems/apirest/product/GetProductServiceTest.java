@@ -10,7 +10,7 @@ import org.junit.jupiter.api.Test;
 import br.com.raiosystems.apirest.entities.Product;
 import br.com.raiosystems.apirest.modules.products.services.CreateProductService;
 import br.com.raiosystems.apirest.modules.products.services.GetProductService;
-import br.com.raiosystems.apirest.repositories.ProductRepositoryTest;
+import br.com.raiosystems.apirest.repositories.IRepository;
 import br.com.raiosystems.apirest.repositories.RepositoryTest;
 
 public class GetProductServiceTest {
@@ -23,7 +23,7 @@ public class GetProductServiceTest {
     Product product = new Product("Mx Keys Mini", 220.00);
 
     // Repositorio de Produtos
-    RepositoryTest<Product> repositoryTest = new RepositoryTest<Product>();
+    IRepository<Product> repositoryTest = new RepositoryTest<Product>();
 
     // Cadastrar produtos
     CreateProductService createProductService = new CreateProductService(repositoryTest);
@@ -42,7 +42,8 @@ public class GetProductServiceTest {
     // Produtos (id, name, price)
 
     // Repositorio de Produtos
-    ProductRepositoryTest repositoryTest = new ProductRepositoryTest();
+    IRepository<Product> repositoryTest = new RepositoryTest<Product>();
+
     GetProductService getCourseService = new GetProductService(repositoryTest);
 
     // Criando id não existente
