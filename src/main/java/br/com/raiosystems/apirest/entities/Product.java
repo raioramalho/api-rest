@@ -4,6 +4,7 @@ import java.util.UUID;
 
 public class Product extends Item{
   private UUID id;
+  private String type;
   private String name;
   private Double price;
 
@@ -14,11 +15,10 @@ public class Product extends Item{
 
   public Product(String name, Double price) {
     this.id = UUID.randomUUID();
+    this.type = "Product";
     this.name = name;
     this.price = price;
   }
-
-
 
   public UUID getId() {
     return id;
@@ -44,6 +44,12 @@ public class Product extends Item{
     this.price = price;
   }
 
+  public String getType() {
+    return type;
+  }
 
+  public void setType(String type) {
+    this.type = type;
+  }
 
 }
