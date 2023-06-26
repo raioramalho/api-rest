@@ -22,6 +22,7 @@ import br.com.raiosystems.apirest.repositories.RepositoryTest;
 public class CourseController {
 
   IRepository<Course> repository = new RepositoryTest<Course>();
+  // IRepository<Course> repository = new Repository<Course>("course");
   private CreateCourseService createCourseService = new CreateCourseService(repository);
   private GetAllCourseService getAllCourseService = new GetAllCourseService(repository);
   private GetCourseService getCourseService = new GetCourseService(repository);

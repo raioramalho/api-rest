@@ -15,6 +15,7 @@ import br.com.raiosystems.apirest.modules.products.services.CreateProductService
 import br.com.raiosystems.apirest.modules.products.services.GetAllProductService;
 import br.com.raiosystems.apirest.modules.products.services.GetProductService;
 import br.com.raiosystems.apirest.repositories.IRepository;
+import br.com.raiosystems.apirest.repositories.Repository;
 import br.com.raiosystems.apirest.repositories.RepositoryTest;
 
 @RestController
@@ -22,6 +23,7 @@ import br.com.raiosystems.apirest.repositories.RepositoryTest;
 public class ProductController {
 
   IRepository<Product> repository = new RepositoryTest<Product>();
+  // IRepository<Product> repository = new Repository<Product>("product");
   private CreateProductService createProductService = new CreateProductService(repository);
   private GetAllProductService getAllProductService = new GetAllProductService(repository);
   private GetProductService getProductService = new GetProductService(repository);
