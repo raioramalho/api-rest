@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 import br.com.raiosystems.apirest.entities.Product;
 
 @Repository
-public class ProductRepositoryTest implements IProductRepository{
+public class ProductRepositoryTest implements IRepository<Product>{
   private List<Product> products;
 
   public ProductRepositoryTest() {
@@ -37,4 +37,5 @@ public class ProductRepositoryTest implements IProductRepository{
     product.setId(UUID.randomUUID());
     return product;
   }
+
 }

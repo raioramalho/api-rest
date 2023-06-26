@@ -5,14 +5,14 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import br.com.raiosystems.apirest.entities.Product;
-import br.com.raiosystems.apirest.repositories.IProductRepository;
+import br.com.raiosystems.apirest.repositories.IRepository;
 
 @Service
 public class GetAllProductService {
 
-  private IProductRepository repository;
+  private IRepository<Product> repository;
 
-  public GetAllProductService(IProductRepository repository) {
+  public GetAllProductService(IRepository<Product> repository) {
     this.repository = repository;
   }
 

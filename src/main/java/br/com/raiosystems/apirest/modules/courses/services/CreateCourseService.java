@@ -3,14 +3,14 @@ package br.com.raiosystems.apirest.modules.courses.services;
 import org.springframework.stereotype.Service;
 
 import br.com.raiosystems.apirest.entities.Course;
-import br.com.raiosystems.apirest.repositories.ICourseRepository;
+import br.com.raiosystems.apirest.repositories.IRepository;
 
 @Service
 public class CreateCourseService {
 
-  private ICourseRepository repository;
+  private IRepository<Course> repository;
 
-  public CreateCourseService(ICourseRepository repository) {
+  public CreateCourseService(IRepository<Course> repository) {
     this.repository = repository;
   }
 

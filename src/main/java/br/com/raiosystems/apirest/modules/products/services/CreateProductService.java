@@ -3,13 +3,13 @@ package br.com.raiosystems.apirest.modules.products.services;
 import org.springframework.stereotype.Service;
 
 import br.com.raiosystems.apirest.entities.Product;
-import br.com.raiosystems.apirest.repositories.IProductRepository;
+import br.com.raiosystems.apirest.repositories.IRepository;
 
 @Service
 public class CreateProductService {
-  private IProductRepository repository;
+  private IRepository<Product> repository;
 
-  public CreateProductService(IProductRepository repository) {
+  public CreateProductService(IRepository<Product> repository) {
     this.repository = repository;
   }
 

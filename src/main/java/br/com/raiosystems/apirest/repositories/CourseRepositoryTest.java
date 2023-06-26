@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 import br.com.raiosystems.apirest.entities.Course;
 
 @Repository
-public class CourseRepositoryTest implements ICourseRepository{
+public class CourseRepositoryTest implements IRepository<Course>{
 
   private List<Course> courses;
 
