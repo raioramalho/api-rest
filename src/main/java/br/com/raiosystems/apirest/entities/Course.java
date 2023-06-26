@@ -2,7 +2,7 @@ package br.com.raiosystems.apirest.entities;
 
 import java.util.UUID;
 
-public class Course {
+public class Course extends Item{
   private UUID id;
   private String description;
   private String name;

@@ -13,6 +13,7 @@ import br.com.raiosystems.apirest.entities.Course;
 import br.com.raiosystems.apirest.modules.courses.services.CreateCourseService;
 import br.com.raiosystems.apirest.modules.courses.services.GetCourseService;
 import br.com.raiosystems.apirest.repositories.CourseRepositoryTest;
+import br.com.raiosystems.apirest.repositories.RepositoryTest;
 
 public class GetCourseServiceTest {
   @Test
@@ -23,7 +24,7 @@ public class GetCourseServiceTest {
     Course course = new Course("Description", "Curso_de_TDD", 70);
 
     // Repositorio de Curso
-    CourseRepositoryTest repositoryTest = new CourseRepositoryTest();
+    RepositoryTest<Course> repositoryTest = new RepositoryTest<Course>();
 
     // Cadastrar curso
     CreateCourseService createCourseService = new CreateCourseService(repositoryTest);

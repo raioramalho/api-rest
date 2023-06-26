@@ -1,18 +1,17 @@
 package br.com.raiosystems.apirest.product;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import java.util.UUID;
 
 import org.junit.jupiter.api.Test;
 
-import br.com.raiosystems.apirest.entities.Course;
 import br.com.raiosystems.apirest.entities.Product;
 import br.com.raiosystems.apirest.modules.products.services.CreateProductService;
 import br.com.raiosystems.apirest.modules.products.services.GetProductService;
 import br.com.raiosystems.apirest.repositories.ProductRepositoryTest;
+import br.com.raiosystems.apirest.repositories.RepositoryTest;
 
 public class GetProductServiceTest {
 
@@ -24,7 +23,7 @@ public class GetProductServiceTest {
     Product product = new Product("Mx Keys Mini", 220.00);
 
     // Repositorio de Produtos
-    ProductRepositoryTest repositoryTest = new ProductRepositoryTest();
+    RepositoryTest<Product> repositoryTest = new RepositoryTest<Product>();
 
     // Cadastrar produtos
     CreateProductService createProductService = new CreateProductService(repositoryTest);

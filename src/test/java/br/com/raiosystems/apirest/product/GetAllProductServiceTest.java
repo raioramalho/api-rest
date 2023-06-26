@@ -12,6 +12,7 @@ import br.com.raiosystems.apirest.entities.Product;
 import br.com.raiosystems.apirest.modules.products.services.CreateProductService;
 import br.com.raiosystems.apirest.modules.products.services.GetAllProductService;
 import br.com.raiosystems.apirest.repositories.ProductRepositoryTest;
+import br.com.raiosystems.apirest.repositories.RepositoryTest;
 
 @SpringBootTest
 public class GetAllProductServiceTest {
@@ -24,7 +25,7 @@ public class GetAllProductServiceTest {
     Product product2 = new Product("Mx Keys", 320.00);
 
     // Repositorio de Produtos
-    ProductRepositoryTest repositoryTest = new ProductRepositoryTest();
+    RepositoryTest<Product> repositoryTest = new RepositoryTest<Product>();
 
     // Cadastrar produtos
     CreateProductService createProductService = new CreateProductService(repositoryTest);
