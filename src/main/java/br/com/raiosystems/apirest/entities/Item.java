@@ -5,7 +5,6 @@ import java.util.UUID;
 public class Item {
   private UUID id;
   private String name;
-  private String type;
 
   public UUID getId() {
     return id;
@@ -20,15 +19,5 @@ public class Item {
   public void setName(String name) {
     this.name = name;
   }
-
-  public String getType() {
-    return type;
-  }
-
-  public void setType(String type) {
-    this.type = type;
-  }
-
-
 
 }

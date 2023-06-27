@@ -4,7 +4,6 @@ import java.util.UUID;
 
 public class Course extends Item{
   private UUID id;
-  private String type;
   private String description;
   private String name;
   private int workload;
@@ -14,7 +13,6 @@ public class Course extends Item{
 
   public Course(String description, String name, int workload) {
     this.id = UUID.randomUUID();
-    this.type = "Course";
     this.description = description;
     this.name = name;
     this.workload = workload;
@@ -44,14 +42,5 @@ public class Course extends Item{
   public void setWorkload(int workload) {
     this.workload = workload;
   }
-
-  public String getType() {
-    return type;
-  }
-
-  public void setType(String type) {
-    this.type = type;
-  }
-
 
 }
