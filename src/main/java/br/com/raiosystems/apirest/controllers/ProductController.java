@@ -15,7 +15,6 @@ import br.com.raiosystems.apirest.modules.products.services.CreateProductService
 import br.com.raiosystems.apirest.modules.products.services.GetAllProductService;
 import br.com.raiosystems.apirest.modules.products.services.GetProductService;
 import br.com.raiosystems.apirest.repositories.IRepository;
-import br.com.raiosystems.apirest.repositories.Repository;
 import br.com.raiosystems.apirest.repositories.RepositoryTest;
 
 @RestController
