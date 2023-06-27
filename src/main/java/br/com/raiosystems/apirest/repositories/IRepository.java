@@ -11,4 +11,8 @@ public interface IRepository<T> {
   public List<T> getAll();
 
   public T save(T data);
+
+  // public T update(T data);
+
+  // public T delete(T data);
 }
